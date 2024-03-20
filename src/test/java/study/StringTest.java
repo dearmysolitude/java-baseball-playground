@@ -44,4 +44,5 @@ public class StringTest {
         }).isInstanceOf(StringIndexOutOfBoundsException.class)
                 .hasMessageContaining("range: 3");
     }
+    
 }
