@@ -11,12 +11,12 @@ public class BaseballPlayground {
         this.notOver = true;
     }
 
-    private String getRndNumber() {
+    public String getRndNumber() {
         return this.rndNumber;
     }
 
     // 라운드 결과를 확인하는 메인 로직, 입력은 문자열로 받는다.
-    public RoundResult doGame(String input) {
+    public RoundResult doRound(String input) {
         RoundResult result = makeRoundResult(input);
 
         if(result.getStrike() == 3) {
@@ -53,12 +53,6 @@ public class BaseballPlayground {
     public Boolean notOver() {
         return this.notOver;
     }
-
-//    private int itIsStrike(String input, int index) {
-//        if(rndNumber.charAt(index) == input.charAt(index)) {
-//            return
-//        }
-//    }
 
     public static String makeRndNumber() {
         Integer temp = (int)(Math.random() * 1000);
