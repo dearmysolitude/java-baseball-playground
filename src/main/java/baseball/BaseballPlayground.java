@@ -1,7 +1,7 @@
 package baseball;
 
 public class BaseballPlayground {
-    private String rndNumber;  // 어디에 어떤 숫자가 있는지 판단하는 데에는 Integer 보다 String 이 유리.
+    private final String rndNumber;  // 어디에 어떤 숫자가 있는지 판단하는 데에는 Integer 보다 String 이 유리.
     private Boolean isItYourTurn;
     private Boolean notOver;
 

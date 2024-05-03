@@ -1,6 +1,6 @@
 package baseball;
 
-class BaseballPlayground {
+class BPTest {
     // doGame
     // makeRndNumber
 }
