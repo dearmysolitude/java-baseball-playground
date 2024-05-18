@@ -23,8 +23,9 @@ public class BaseballApp {
 
     private static String callProperInputProcess(BaseballPlayground bp, InputView inputView) {
         if(bp.yourTurn()) {
-            return inputView.takeInput();
+            return inputView.returnInputString();
         }
         return BaseballPlayground.makeRndNumber();
     }
+
 }

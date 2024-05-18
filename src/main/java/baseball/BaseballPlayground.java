@@ -1,7 +1,5 @@
 package baseball;
 
-import java.util.Arrays;
-
 public class BaseballPlayground {
     private final String rndNumber;
     private Boolean isItYourTurn;
@@ -66,11 +64,15 @@ public class BaseballPlayground {
         do {
             int temp = (int) (Math.random() * 9 + 1);
             String tempString = String.valueOf(temp);
-            if (!numberGenerated.toString().contains(tempString)) {  // stringbuilder를 string으로 바꾸어 tempString과 비교한다.
-                numberGenerated.append(tempString);
-            }
+            appendIfNotContains(numberGenerated, tempString);
         } while (numberGenerated.length() != 3);
 
         return numberGenerated.toString();
+    }
+
+    private static void appendIfNotContains(StringBuilder numberGenerated, String tempString) {
+        if (!numberGenerated.toString().contains(tempString)) {  // stringbuilder를 string으로 바꾸어 tempString과 비교한다.
+            numberGenerated.append(tempString);
+        }
     }
 }
