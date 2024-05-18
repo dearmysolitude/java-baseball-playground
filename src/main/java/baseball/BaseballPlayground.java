@@ -2,18 +2,18 @@ package baseball;
 
 public class BaseballPlayground {
     private final String rndNumber;
-    private Boolean isItYourTurn;
+//    private Boolean isItYourTurn;
     private Boolean notOver;
 
     public BaseballPlayground() {
         this.rndNumber = makeRndNumber();
-        this.isItYourTurn = true;
+//        this.isItYourTurn = true;
         this.notOver = true;
     }
 
     public BaseballPlayground(String number) {  // 테스트 코드를 위한 생성자
         this.rndNumber = number;
-        this.isItYourTurn = true;
+//        this.isItYourTurn = true;
         this.notOver = true;
     }
 
@@ -21,12 +21,12 @@ public class BaseballPlayground {
     public RoundResult  doRound(String input) {
         RoundResult result = makeRoundResult(input);
 
-        if(result.getStrike() == 3) {
+        if(result.getStrike() == 3) {  // 경기가 끝난 경우 턴을 바꾸지 않는다.
             this.notOver = false;
             return result;
         }
 
-        this.isItYourTurn = !this.isItYourTurn;
+//        this.isItYourTurn = !this.isItYourTurn;
         return result;
     }
 
@@ -47,9 +47,9 @@ public class BaseballPlayground {
         return new RoundResult(ball, strike);
     }
 
-    public Boolean yourTurn() {
-        return this.isItYourTurn;
-    }
+//    public Boolean yourTurn() {
+//        return this.isItYourTurn;
+//    }
 
     public Boolean notOver() {
         return this.notOver;

@@ -67,7 +67,7 @@ public class InputView {
     public Boolean endThisGame()  {
         String input = getAnswer();
 
-        if(input.equals("1")) {
+        if(input.equals("2")) {
             closeScanner();
             return true;
         }
@@ -79,7 +79,7 @@ public class InputView {
         String input;
 
         do {
-            System.out.println("게임을 계속하시겠습니까?");
+            System.out.println("게임을 계속하시겠습니까? 1: 게임을 새로 시작, 2: 게임을 종료");
             input = scanner.nextLine();
         } while (!correctAnswer(input));
 
