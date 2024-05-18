@@ -8,7 +8,7 @@ public class InputView {
         return retString;
     }
 
-    public Boolean doItAgain() {
+    public Boolean endThisGame() {
         System.out.println("게임을 계속하시겠습니까?");
         String input = "";
         Boolean decision = false;

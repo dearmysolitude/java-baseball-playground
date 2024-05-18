@@ -1,7 +1,7 @@
 package baseball;
 
 public class BaseballPlayground {
-    private final String rndNumber;  // 어디에 어떤 숫자가 있는지 판단하는 데에는 Integer 보다 String 이 유리.
+    private final String rndNumber;
     private Boolean isItYourTurn;
     private Boolean notOver;
 
@@ -11,12 +11,14 @@ public class BaseballPlayground {
         this.notOver = true;
     }
 
-    public String getRndNumber() {
-        return this.rndNumber;
+    public BaseballPlayground(String number) {  // 테스트 코드를 위한 생성자
+        this.rndNumber = number;
+        this.isItYourTurn = true;
+        this.notOver = true;
     }
 
     // 라운드 결과를 확인하는 메인 로직, 입력은 문자열로 받는다.
-    public RoundResult doRound(String input) {
+    public RoundResult  doRound(String input) {
         RoundResult result = makeRoundResult(input);
 
         if(result.getStrike() == 3) {
@@ -37,7 +39,6 @@ public class BaseballPlayground {
                 strike ++;
                 continue;
             }
-
             if(this.rndNumber.indexOf(input.charAt(i)) != -1) {
                 ball ++;
             }

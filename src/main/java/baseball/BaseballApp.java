@@ -8,7 +8,7 @@ public class BaseballApp {
             BaseballPlayground bp = new BaseballPlayground();
             String gameNumber = doGame(bp, inputView, outputView);
             outputView.printResult(bp.yourTurn(), gameNumber);  // 누가 이겼는지, 생성 숫자는 무엇이었는지.
-        } while (inputView.doItAgain());
+        } while (!inputView.endThisGame());
     }
 
     private static String doGame(BaseballPlayground bp, InputView inputView, OutputView outputView) {
@@ -21,7 +21,7 @@ public class BaseballApp {
         return input;
     }
 
-    public static String callProperInputProcess(BaseballPlayground bp, InputView inputView) {
+    private static String callProperInputProcess(BaseballPlayground bp, InputView inputView) {
         if(bp.yourTurn()) {
             return inputView.takeInput();
         }
