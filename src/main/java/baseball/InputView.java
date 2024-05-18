@@ -1,6 +1,7 @@
 package baseball;
 
 public class InputView {
+    // 000은 받아서는 안된다.
     public String takeInput() {
 
 

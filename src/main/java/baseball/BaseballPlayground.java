@@ -1,5 +1,7 @@
 package baseball;
 
+import java.util.Arrays;
+
 public class BaseballPlayground {
     private final String rndNumber;
     private Boolean isItYourTurn;
@@ -55,8 +57,20 @@ public class BaseballPlayground {
         return this.notOver;
     }
 
+    /*
+    컴퓨터는 1 부터 9 까지 숫자 중 3 숫자를 골라 세자리 숫자를 만든다.
+     */
     public static String makeRndNumber() {
-        Integer temp = (int)(Math.random() * 1000);
-        return String.valueOf(temp);
+        StringBuilder numberGenerated = new StringBuilder(); // mutable한 stringbuilder 사용
+
+        do {
+            int temp = (int) (Math.random() * 9 + 1);
+            String tempString = String.valueOf(temp);
+            if (!numberGenerated.toString().contains(tempString)) {  // stringbuilder를 string으로 바꾸어 tempString과 비교한다.
+                numberGenerated.append(tempString);
+            }
+        } while (numberGenerated.length() != 3);
+
+        return numberGenerated.toString();
     }
 }

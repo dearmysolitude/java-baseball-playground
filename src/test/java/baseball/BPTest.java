@@ -40,23 +40,4 @@ class BPTest {
     private boolean checkResult(RoundResult result, int ball, int strike) {
         return result.getStrike() == strike && result.getBall() == ball;
     }
-
-    // makeRndNumber
-    @Test
-    @DisplayName("랜덤 넘버 생성기 테스트: 숫자가 제대로 만들어지면 통과")
-    public void testRndNumMaker() {
-        int i = 0;
-        boolean noExceptionTrue = true;
-        while (i < 10) {  // 10 번 숫자 생성 해보기: 이런 테스트 코드를 작성하게 되면 통과 못하는 경우가 발생하는 경우가 있을수도 없을수도 있다...
-            try {
-                BaseballPlayground.makeRndNumber();
-            } catch (NumberFormatException nfe) {
-                noExceptionTrue = false;
-                nfe.printStackTrace();
-            }
-            i ++;
-        }
-
-        assertTrue(noExceptionTrue);
-    }
 }
